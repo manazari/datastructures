@@ -1,0 +1,121 @@
+R3.13)  The mystery method moves an amount of cash from one
+        bank account's balance to anothers. This is implemented
+        through subtracting @param amount from this BankAccount
+        instance's balance property and adding amount to
+        @param that's balance.
+
+R3.15)  The area and sideLength properties can become out of
+        sync if a method changes sideLength but forgets to
+        update method. For example, upon creating a Square 
+        instance, sideLength is initialized to some value but
+        area remains undefined.
+
+        ```java
+        public class Square {
+            private int sideLendth;
+
+            public Square(int length) {
+                sideLength = length;
+            }
+
+            public int getArea() {
+                return sideLength * sideLength
+            }
+        }
+        ```
+
+R3.16)  This class has a logic error. In the grow() method,
+        the sideLength property is changed without updating
+        the area property: thus area and sideLength are no
+        longer syncronized. This can be fixed by removing
+        the area property entirely.
+
+R4.8)   
+    B   m / n + m % n
+        18 / 4 + 18 % 4
+        4 + 2
+        --> 6
+
+    D   1 - (1 - (1 - (1 - (1 - n))))
+        1 - (1 - (1 - (1 - (1 - 4)))) 
+        1 - 1 + 1 - 1 + 1 - 4
+        --> -3
+
+R4.12)  1. Scanner is not imported
+        -FIX: add import java.util.Scanner
+
+        2. program tries to read int from input but a String
+        is passed into Scanner constructor rather than an
+        InputStream
+        -FIX: change "System.in" to System.in (the default
+        InputStream) by removing quotations.
+
+        3. readInt() is not a method of Scanner
+        -FIX: change to .nextInt()
+
+R4.13)  float computations in Java and many languages are not
+        exact: thus the change being off by 2.8e-16. Since
+        the smallest change is 0.01, the giveChange() method
+        should be sure to round the change to 2 decimal points
+        (and be sure no extra pennies are created or destroyed
+        by rounding errors).
+
+R4.27)
+    A   roundoff error
+    B   exact
+    C   overflow
+    D   overflow
+        
+R5.21)
+    B   "Tom"
+    C   "Churchill"
+    D   "car manufacturer"
+    E   "Harry"
+
+R5.28)  true
+
+R5.32)
+    A   b = n == 0;
+    B   b = n != 0;
+    C   b = n > 1 && n < 2;
+    D   b = n < 1 || n > 2;
+
+R6.31)  Generate a random int for the hour between 1 and 12
+        and for the minutes between 0 and 59 inclusive.
+
+        ```java
+        import java.lang.Math;
+        
+        // rest of program...
+
+        int hour    = (int)(Math.random()*12) + 1
+        int minutes = (int)(Math.random()*60)
+        ```
+
+R6.32)  Generate a random number between 0 and 1.00. Then,
+        initialize an int which will be either 1, 2, or 3.
+        To determine its value, set up if statements treating
+        the random float as a percent which you compare
+        to each destination's probability based on the
+        likelihood to select a friend from that desination.
+
+        ```java
+        import java.lang.Math;
+        
+        // rest of program...
+
+        // California (destination 1): 10 friends
+        // Nevada     (destination 2):  3 friends
+        // Utah       (destination 3):  2 friends
+        float perc = Math.random()
+        float friends = 10 + 3 + 2
+        int destination = -1;
+        
+        if (perc < 10/friends) {
+            destination = 1
+        } else if (perc < (10+3)/friends) {
+            destination = 2
+        } else {
+            destination = 3
+        }
+        ```
