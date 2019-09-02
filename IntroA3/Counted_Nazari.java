@@ -28,7 +28,6 @@ public class Counted_Nazari {
         }
         System.out.printf("There are %d Counted instances.\n", Counted.getNumberOfInstances());
 
-        //String name = JOptionPane.showInputDialog("WHat is your name?");
         String dialog = "Java is the language equivalent of Joe Biden.\n";
         for (String word : args) dialog += word + " ";
         URL imageLocation = new URL("http://greco.bcp.org/webs/bcp/bellSeal.jpg");
