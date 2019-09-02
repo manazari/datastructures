@@ -78,7 +78,7 @@ class Counted {
 
     /**
      * This method is a getter for {@link Counted#numberOfInstances}
-     * @return int  This returns the number of Counted instances
+     * @return int  This returns the number of Counted instances 
      */
     public static int getNumberOfInstances() {
         return numberOfInstances;
