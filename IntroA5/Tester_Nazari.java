@@ -57,6 +57,14 @@ class PrimeGenerator {
         return true;
     }
 
+    /**
+     * This method returns the prime immediately following
+     * the previous prime returned by this method
+     * starting from 2. The previous prime and index
+     * for looping to find the next prime are stored
+     * as private properties.
+     * @return int  prime after {@link PrimeGenerator#lastPrime}
+     */
     public int nextPrime() {
         /**
          * The loop dependant on factors of 6 requires
