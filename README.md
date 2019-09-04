@@ -1,7 +1,7 @@
 # Data Structures
 ![Go Bells!](https://media.team254.com/about/brad.jpg)
 <br><br>
-Work for all datastructures assignments
+My work for all datastructures assignments
 
 ### Repo Upload Command
     git add -A && git commit -m "COMMIT"X && git push -u datastructures master
