@@ -9,3 +9,6 @@ My work for all datastructures assignments
 <br><br><br><br><br><br>
 
 > *..... the blind e mann sees all*
+
+
+git add -A  && git commit -m "ArrayA2-Checkers Puzzle Wednesday" && git push -u datastructures master
