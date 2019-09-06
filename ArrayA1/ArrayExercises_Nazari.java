@@ -76,9 +76,7 @@ public class ArrayExercises_Nazari {
         nums.replaceAll(num -> Math.round(20 * num/MAX));
         for (int row = 20; row > 0; row--) {
             String rowString = "";
-            for (int num : nums) {
-                rowString += row <= num ? "*" : " ";
-            }
+            for (int num : nums) rowString += row <= num ? "*" : " ";
             System.out.println(rowString);
         }
     }
