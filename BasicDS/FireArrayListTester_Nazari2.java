@@ -6,13 +6,13 @@
  * @author  Matthew Nazari
  * @since   2019-09-11
  */
-public class FireArrayListTester_Nazari {
+public class FireArrayListTester_Nazari2 {
     /**
      * This is the main method which explores the
-     * FireArrayList class through creating an 
-     * instance `fire`, adding elements, then 
-     * triggering the custom out of bounds error
-     * exception by attempting to add at index -1
+     * FireArrayList class through creating two
+     * instances `fire` and `water`, adding
+     * elements to either, then printing their
+     * details
      * @param termArgs  unused
      */
     public static void main(String[] termArgs) throws Exception {
@@ -28,7 +28,7 @@ public class FireArrayListTester_Nazari {
         fire.add(9);
         fire.add(10);
         fire.add(11);
-        fire.add(99, 5);
+        fire.add(99, 4);
         fire.details();
 
         fire.add(13, -1);
@@ -46,7 +46,6 @@ public class FireArrayListTester_Nazari {
 class FireArrayList {
     /**
      * The private array to hold all elements
-     * and the simulated size of the list
      */
     private int[] array;
     private int length;
@@ -78,10 +77,7 @@ class FireArrayList {
      * elements up to index, inserting element at
      * index, then copying all elements after index
      * from old array to new array. If the array 
-     * property is larger than the simulated
-     * FireArrayList size represented by property
-     * length, a new array won't be created.
-     * 
+     * property is 
      * @param element int   element to be added
      * @param index   int   index to add element
      */
@@ -90,7 +86,7 @@ class FireArrayList {
             throw new Exception("\n\n## THAT'S ILLEGAL!\n   index " + index + " out of bounds (length " + length + ")");
         int[] newArray = index < array.length ? array : new int[array.length + 10];
         for (int i = 0; i < index; i++) newArray[i] = array[i];
-        for (int i = length; i > index; i--) newArray[i] = array[i-1];
+        for (int i = index; i < length; i++) newArray[i+1] = array[i];
         newArray[index] = element;
         array = newArray;
         length++;

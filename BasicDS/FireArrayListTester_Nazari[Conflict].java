@@ -28,7 +28,8 @@ public class FireArrayListTester_Nazari {
         fire.add(9);
         fire.add(10);
         fire.add(11);
-        fire.add(99, 5);
+        fire.details();
+        fire.add(99, 4);
         fire.details();
 
         fire.add(13, -1);
@@ -46,7 +47,6 @@ public class FireArrayListTester_Nazari {
 class FireArrayList {
     /**
      * The private array to hold all elements
-     * and the simulated size of the list
      */
     private int[] array;
     private int length;
@@ -81,16 +81,17 @@ class FireArrayList {
      * property is larger than the simulated
      * FireArrayList size represented by property
      * length, a new array won't be created.
-     * 
      * @param element int   element to be added
      * @param index   int   index to add element
      */
     public void add(int element, int index) throws Exception {
         if (index > length || index < 0)
             throw new Exception("\n\n## THAT'S ILLEGAL!\n   index " + index + " out of bounds (length " + length + ")");
-        int[] newArray = index < array.length ? array : new int[array.length + 10];
+        int[] newArray; //= index < array.length ? array : new int[array.length + 10];
+        if (index < array.length) newArray = array;
+        else newArray = new int[array.length+10];
         for (int i = 0; i < index; i++) newArray[i] = array[i];
-        for (int i = length; i > index; i--) newArray[i] = array[i-1];
+        for (int i = index; i < length; i++) newArray[i+1] = array[i];
         newArray[index] = element;
         array = newArray;
         length++;
