@@ -11,4 +11,4 @@ My work for all datastructures assignments
 > *..... the blind e mann sees all*
 
 
-git add -A  && git commit -m "ArrayA2-Checkers Puzzle Wednesday" && git push -u datastructures master
+git add InheritA4  && git commit -m "InheritA4" && git push -u datastructures master
