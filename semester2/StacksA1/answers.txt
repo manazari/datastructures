@@ -1,0 +1,81 @@
+2.
+public Object removeFirst() {
+   if (first == null)
+      throw new NoSuchElementException();
+
+   Object elem = first.data;
+   first = first.next; 
+   return elem;
+} 
+
+3.
+public Object next() {
+   if (!hasNext())
+      throw new NoSuchElementException();
+   
+   previous = position;
+   isAfterNext = true;
+   if (position == null)
+      position = first;
+   else
+      position = position.next;
+
+   return position.data;
+}
+
+4.
+public void remove() {
+   if (!isAfterNext)
+      throw new IllegalStateException();
+   
+   if (position == first)
+      removeFirst();
+   else
+      previous.next = position.next;
+   
+   position = previous; 
+   isAfterNext = false; 
+}
+
+5.
+public void add(Object element) {
+   if (position == null) {
+      addFirst(element);
+      position = first;
+   } else {
+      Node newNode = new Node();
+      newNode.data = element;
+      newNode.next =position.next; 
+      position.next = newNode; 
+      position = newNode; 
+   }
+
+   isAfterNext = false; 
+}
+
+6. 
+public void set(Object element) {
+   if (!isAfterNext)
+      throw new IllegalStateException();
+
+   position.data = element;
+}
+
+8.
+public void push(Object element) {
+   if (open >= size) {
+      Object[] newArray = new Object[size*2];
+      for (int i = 0; i < size; i++)
+         newArray[i] = item[i];
+      item = newArray;
+      size *= 2;
+   }
+
+   item[open++] = size;
+}
+
+public Object pop() {
+   if (isEmpty())
+      throw new NoSuchElementException();
+   return item[--open];
+}

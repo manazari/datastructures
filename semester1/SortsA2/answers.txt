@@ -1,0 +1,39 @@
+R14.3)
+    A   n^2
+    C   n^4
+    F   n^3
+    J   n
+
+R14.5)  It will take the algorithm 10sec to handle 2.000
+        records and 50sec to handle 10,000 records
+
+R14.7)  O(n^n)
+        O(n^3)
+        O(2^n)
+        O(n^2 * logn)
+        O(n^logn)
+        O(n * sqrtn)
+        O(n * logn)
+        O(n)
+        O(sqrtn)
+        O(logn)
+
+R14.8)  n; n/2; 2n
+
+R14.9)  n
+
+R14.13) 
+    A   [4 7 11 4 9 5 11 7 3 5]
+        [4 7 11 4 9] [5 11 7 3 5]
+        [4 7 11] [4 9] [5 11 7] [3 5]
+        [4] [7] [11] [4] [9] [5] [11] [7] [3] [5]
+        [4 7] [4 11] [5 9] [7 11] [3 7] [5]
+        [4 4 6 7 11] [5 7 9 11] [3 5 7]
+        [4 4 5 6 7 7 9 11 11] [3 5 7]
+        [3 4 4 5 5 6 7 7 7 9 11 11]
+    C   Same process as described above
+
+R14.19) Then all the elements do not have to be sorted
+
+R14.26) Any method which uses quick sorts then comparing
+        elements would be O(n * logn)
