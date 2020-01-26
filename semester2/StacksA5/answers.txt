@@ -1,0 +1,31 @@
+R15.1   Since order does not matter, a SET would best represent a collection of purchased items
+R15.2   A QUEUE would best represent this as first people to make appointments should be the first to be picked
+R15.3   For a map with multiple events per date, a LIST would be best as it allows order and easy references
+R15.8   
+"TOM"
+"TOM" "DIANA"
+"TOM" "DIANA" "HARRY"
+
+R15.9   
+"TOM"
+"TOM" "DIANA"
+"TOM" "DIANA" "HARRY"
+"TOM" "DIANA" "ROMEO" "HARRY"
+"TOM" "DIANA" "ROMEO" "HARRY" "JULIET"
+
+R15.11  list.removeIf(elem -> (elem.length() <= 3)); 
+R15.13  You would use an ARRAYLIST as it is more efficient for lookups
+R15.14  You would use a LINKEDLIST as it is more efficient to add and remove appointments which will be frequent
+R15.15  You would use a QUEUE as the last in is the last out
+R15.16  "Z"..."A"
+R15.18  If both sets contain each element, add it to the AB conjoined collection
+R15.20  Two keys can have the same value, but two values cannot have the same key
+R15.21  A map is a set of values associated with a single key
+R15.22  
+for (String keys : map.keySet()) System.out.println(keys);
+for (Map.Entry<String, Object> entry : map.entrySet()) System.out.println(entry.getKey() + ":" + entry.getValue().toString());
+map.forEach((key, value) -> System.out.println(key + ":" + value));
+
+R15.24  These two strings do not have the same hash code
+R15.25  ABCDEFGHIJKLMNOP
+R15.26  PONMLKJIHGFEDCBA
